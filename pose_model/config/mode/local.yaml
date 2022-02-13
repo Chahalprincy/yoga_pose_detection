@@ -1,0 +1,13 @@
+# @package _global_
+datamodule:
+  train_dataset: "project/train-keypoint-images"
+  val_dataset: "project/test-keypoint-images"
+  batch_size: 64
+  num_workers: 1
+  gpus: 1
+  nodes: 1
+
+trainer:
+  gpus: ${datamodule.gpus}
+  max_epochs: 50
+  log_every_n_steps: 1
